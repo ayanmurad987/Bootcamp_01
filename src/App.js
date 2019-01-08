@@ -9,10 +9,60 @@ import * as screens from './component'
 
 class App extends Component {
 
+  constructor(){
+    super();
+  }
+
+  authToggle = ()=>{
+
+    if (localStorage.getItem('toggle')=="login"){
+      return <div>
+
+<button type="button" className="btn btn-primary nav-link" 
+    onClick={()=>{localStorage.setItem('toggle','logOut')}}
+    >LogOut</button>
+
+      </div>
+    }
+    else if (localStorage.getItem('toggle')== "logOut"){
+
+      return<div>
+
+    
+<Link to="/Login" className="nav-link" style={{display:"inline"}}>
+    <button type="button" className="btn btn-primary" >Login</button>
+    </Link>
+  
+    <Link to="/SignUp" className="nav-link" style={{display:"inline"}}>
+    <button type="button" className="btn btn-primary" >SignUp</button>
+    </Link>
+  
+    
+      </div>
+    }
+
+    else{
+
+      return<div>
+
+    
+<Link to="/Login" className="nav-link" style={{display:"inline"}}>
+    <button type="button" className="btn btn-primary" >Login</button>
+    </Link>
+  
+    <Link to="/SignUp" className="nav-link" style={{display:"inline"}}>
+    <button type="button" className="btn btn-primary" >SignUp</button>
+    </Link>
+  
+    
+      </div>
+    }
+        
+  }
+
   render() {
     return (
       <div className="container">
-      
 
       
         
@@ -43,14 +93,10 @@ class App extends Component {
     
   </div>
   <div>
+    
 
-  <Link to="/Login" className="nav-link" style={{display:"inline"}}>
-  <button type="button" className="btn btn-primary" >Login</button>
-  </Link>
-
-  <Link to="/SignUp" className="nav-link" style={{display:"inline"}}>
-  <button type="button" className="btn btn-primary" >SignUp</button>
-  </Link>
+  
+  {this.authToggle()}
   
 
 

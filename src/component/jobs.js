@@ -11,7 +11,11 @@ class Jobs extends Component {
       <br />
         <br />
         <br />
-        <h1 className="font-weight-bold">Companies </h1>
+        <div className="d-flex  justify-content-between">
+        <h1 className="font-weight-bold">Jobs</h1>
+        <div><button type="button" class="btn btn-outline-success">Add Your Jobs</button></div>
+        
+    </div>
         <div className="list-group">
   <button type="button" className="list-group-item list-group-item-action active">
     Jobs

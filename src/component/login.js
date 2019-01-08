@@ -11,6 +11,9 @@ const {email , pass} =this.state
     firebase.auth().signInWithEmailAndPassword(email, pass)
     .then((res) => {
       console.log("login Succes ==>>" , res.user.uid)
+
+      localStorage.setItem('data',res.user.uid)
+      localStorage.setItem('toggle',"login")
     })
     .catch(function(error) {
       // Handle Errors here.
@@ -27,7 +30,7 @@ const {email , pass} =this.state
         <br />
         <br />
         <h1 className="font-weight-bold">Login</h1>
-
+{console.log(localStorage.getItem('data'))}
         <form>
   <div className="form-group">
     <label htmlFor="exampleInputEmail1">Email address</label>
